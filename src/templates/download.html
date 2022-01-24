@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Cartoonsarea Downloader</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+        a, a:hover {
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Rubik', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <table class="table mx-auto table-striped col-md-10 mx-auto">
+            <thead>
+                <tr>
+                    <th scope="col">Episode Title</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for episode in episodes %}
+                <tr>
+                    <th scope="row">{{ episode.title }}</th>
+                    <td>
+                        <a href="{{ episode.url }}" target="_blank" download>Download</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
